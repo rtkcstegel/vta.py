@@ -1,0 +1,27 @@
+{
+  "permalink":"https://www.virustotal.com/url/e8031071a2889dfbc7ebf8a5095fbc26cc8ef7781409c303162201701e14a047/analysis/1430852177/",
+  "resource":"www.virus.com",
+  "url":"http://www.virus.com/",
+  "response_code":1,
+  "scan_date":"2015-05-05 18:56:17",
+  "scan_id":"e8031071a2889dfbc7ebf8a5095fbc26cc8ef7781409c303162201701e14a047-1430852177",
+  "verbose_msg":"Scan finished, scan information embedded in this object",
+  "filescan_id":null,
+  "positives":1,
+  "total":63,
+  "scans":{
+    "CLEAN MX":{
+      "detected":false,
+      "result":"clean site"
+    },
+    "Webutation":{
+      "detected":true,
+      "result":"malicious site"
+    },
+    "Yandex Safebrowsing":{
+      "detected":false,
+      "result":"clean site",
+      "detail":"http://yandex.com/infected?l10n=en&url=http://www.virus.com/"
+    }
+  }
+}
