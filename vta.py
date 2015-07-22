@@ -69,10 +69,12 @@ class vtapi():
         return results
 
     #Function to get results of a scanned file/url
-    def results(self, mode, resource):
+    def results(self, mode, resource, scan_if_no_report=False):
         url = self.baseurl + "%s/report" % mode
         values = {"resource": resource,
                   "apikey": self.api}
+        if scan_if_no_report:
+          values['scan'] = 1
 
         r = requests.post(url, values)
         results = self.check_results(r)
