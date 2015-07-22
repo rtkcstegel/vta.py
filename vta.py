@@ -3,6 +3,7 @@
 #https://www.virustotal.com/en/documentation/public-api/
 #License is the MIT License, see LICENSE and README.md files for more info
 #Copyright (C) 2013 Erethon
+# pylint: skip-file
 
 import requests
 import json
@@ -17,8 +18,13 @@ except ImportError:
     red = green = nothing
 
 
-class vtapi():
-    def __init__(self, verbose=False):
+class vtapi(object):
+    RESPONSE_QUEUED = -2
+    RESPONSE_ERROR = -1
+    RESPONSE_NO_INFO = 0
+    RESPONSE_OKAY = 1
+
+    def __init__(self, verbose=False, api_key=None):
         self.verbose = verbose
         #self.api = "ASWGFHAHJGASDAGHHKHEGWARJLQGEIQYEQWIUAGHDASD"
         self.api = "INSERT YOUR VIRUS TOTAL PUBLIC API HERE"
@@ -74,7 +80,7 @@ class vtapi():
         values = {"resource": resource,
                   "apikey": self.api}
         if scan_if_no_report:
-          values['scan'] = 1
+            values['scan'] = 1
 
         r = requests.post(url, values)
         results = self.check_results(r)

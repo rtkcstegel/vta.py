@@ -3,6 +3,7 @@
 #https://www.virustotal.com/en/documentation/public-api/
 #License is the MIT License, see LICENSE and README.md files for more info
 #Copyright (C) 2013 Erethon
+# pylint: skip-file
 
 from vta import vtapi
 import argparse
