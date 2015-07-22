@@ -67,6 +67,10 @@ class vtapi(object):
 
     #Checking if any `networking` related errors occured
     def check_results(self, r):
+        # exceeded API limit
+        if r.status == 204:
+            return None
+
         try:
             results = r.json()
         except ValueError:
