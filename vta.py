@@ -24,10 +24,10 @@ class vtapi(object):
     RESPONSE_NO_INFO = 0
     RESPONSE_OKAY = 1
 
-    def __init__(self, verbose=False, api_key=None):
+    def __init__(self, api_key, verbose=False):
         self.verbose = verbose
-        #self.api = "ASWGFHAHJGASDAGHHKHEGWARJLQGEIQYEQWIUAGHDASD"
-        self.api = "INSERT YOUR VIRUS TOTAL PUBLIC API HERE"
+        # PUT THE PROPER API KEY HERE
+        self.api = api_key
         self.baseurl = "https://www.virustotal.com/vtapi/v2/"
 
     #Print results from a file/url
